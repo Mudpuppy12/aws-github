@@ -11,3 +11,9 @@
   
   - name: Example from an Ansible Playbook
     ansible.builtin.ping:
+
+  - name: Install nginx
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+    become: true
