@@ -29,8 +29,10 @@ jobs:
       - name: "Install Ansible packages"
         shell: bash
         run: |
-             python -m pip install ansible
+             apt update
+             apt install software-properties-common
+             add-apt-repository --yes --update ppa:ansible/ansible
+             apt install ansible
       
       - name: "Print Ansible version"
         run: ansible-playbook --version
-        
