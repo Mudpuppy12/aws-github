@@ -26,10 +26,11 @@ jobs:
         run: |
             aws s3 ls
 
-      - name: "Install Ansible"
-        uses: alex-oleshkevich/setup-ansible@VERSION 
-        with:
-           version: "9.10.0"
-    
+      - name: "Install Ansible packages"
+        shell: bash
+        run: |
+             python -m pip install ansible
+      
       - name: "Print Ansible version"
         run: ansible-playbook --version
+        
