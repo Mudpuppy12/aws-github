@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   Ansible-Test-Job:
-    runs-on: codebuild-TEST-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: codebuild-lab-gh-1-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v4
