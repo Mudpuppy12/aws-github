@@ -1,13 +1,13 @@
 plugin: amazon.aws.aws_ec2
 aws_profile: default
 
-regions: us-east-2
+regions: us-east-1
 
 hostnames:
   - instance-id
 groups:
 filters:
   tag:Name:
-    - 'Dev Test Host *'
+    - '* Host *'
   instance-state-name : running
   
