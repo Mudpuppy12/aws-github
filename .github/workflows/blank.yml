@@ -39,7 +39,7 @@ jobs:
         shell: bash
         run: |
               ansible-inventory -i aws_ec2.yaml --graph
-              ansible-playbook -i aws_ec2.yaml ssm.yaml
+              ansible-playbook -i aws_ec2.yaml ssm.yaml -vvv
         working-directory: ansible
 
      
