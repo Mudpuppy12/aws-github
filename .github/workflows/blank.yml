@@ -28,10 +28,7 @@ jobs:
       - name: "Install Ansible packages"
         shell: bash
         run: |
-             apt update
-             apt install software-properties-common
-             add-apt-repository --yes --update ppa:ansible/ansible
-             apt install ansible --yes
+             apt install ansible python-boto3 --yes
  
       - name: Ansible Test 1
         run: ansible-inventory -i aws_ec2.yaml --list
