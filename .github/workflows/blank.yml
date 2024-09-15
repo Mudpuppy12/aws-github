@@ -30,6 +30,8 @@ jobs:
         run: |      
              apt update      
              apt install python3-pip --yes
+             pip3 install ansible --break-system-packages
+             pip3 install boto3 --break-system-packages
     
       - name: Ansible Test 1
         run: ansible-inventory -i aws_ec2.yaml --list
