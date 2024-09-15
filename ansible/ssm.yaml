@@ -10,7 +10,7 @@
 
   tasks:
   
-  - name: Example from an Ansible Playbook
+  - name: Test connectivity
     ansible.builtin.ping:
 
   - name: Install nginx
