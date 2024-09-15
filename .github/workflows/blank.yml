@@ -21,11 +21,10 @@ jobs:
           role-to-assume: ${{ env.ROLE_TO_ASSUME }}
           role-session-name: ${{ env.ROLE_SESSION_NAME }}
           aws-region: ${{ env.AWS_REGION }}
-      
-      - name: Copy files to the test website with the AWS CLI
-        run: |
-            aws s3 ls
 
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+      
       - name: "Install Ansible packages"
         shell: bash
         run: |
@@ -33,6 +32,12 @@ jobs:
              apt install software-properties-common
              add-apt-repository --yes --update ppa:ansible/ansible
              apt install ansible --yes
+ 
+      - name: Ansible Test 1
+        run: ansible-inventory -i aws_ec2.yaml --list
+        working-directory: ansible
+
+     
+
       
-      - name: "Print Ansible version"
-        run: ansible-playbook --version
+
