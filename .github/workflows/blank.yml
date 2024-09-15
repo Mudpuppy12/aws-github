@@ -33,11 +33,11 @@ jobs:
              pip3 install ansible --break-system-packages
              pip3 install boto3 --break-system-packages
     
-      - name: Ansible Test 1
+      - name: Run Playbook
         shell: bash
         run: |
-              ls
-              ansible-inventory -i aws_ec2.yaml --list
+              ansible-inventory -i aws_ec2.yaml --graph
+              ansible-playbook -i aws_ec2.yaml ssm.yaml
         working-directory: ansible
 
      
