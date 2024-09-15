@@ -25,13 +25,15 @@ jobs:
       - name: Git clone the repository
         uses: actions/checkout@v4
       
-      - name: "Install Ansible packages"
+      - name: "Install required packages"
         shell: bash
         run: |      
              apt update      
              apt install python3-pip --yes
              pip3 install ansible --break-system-packages
              pip3 install boto3 --break-system-packages
+             curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
+             dpkg -i session-manager-plugin.deb
     
       - name: Run Playbook
         shell: bash
