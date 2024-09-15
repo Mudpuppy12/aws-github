@@ -34,6 +34,7 @@ jobs:
              pip3 install boto3 --break-system-packages
     
       - name: Ansible Test 1
+        shell: bash
         run: |
               ls
               ansible-inventory -i aws_ec2.yaml --list
