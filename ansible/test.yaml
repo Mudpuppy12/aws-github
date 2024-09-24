@@ -1,0 +1,9 @@
+---
+- name: Ansible Test
+  hosts: localhost
+  gather_facts: false
+  tasks:
+     - include_vars:
+        file: variables.yml
+     - name: lookup ssm parameter store in the current region
+       debug: msg="{{ test }}"
