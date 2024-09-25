@@ -7,3 +7,5 @@
         file: variables.yml
      - name: lookup ssm parameter store in the current region
        debug: msg="{{ test }}"
+     - name: lookup a sekret
+       debug: msg="{{ sekret }}"

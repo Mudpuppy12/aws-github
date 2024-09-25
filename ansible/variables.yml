@@ -1,1 +1,2 @@
-test: "{{ lookup('aws_ssm', 'test' ) }}"
+test: "{{ lookup('aws_ssm', 'test',on_missing='skip') | default ('ZIPO',true) }}"
+sekret: "{{ lookup('amazon.aws.aws_secret', 'SKRET', on_missing='skip') | default ('ZIPO',true) }}"
